@@ -55,8 +55,8 @@ myAdditionalKeys = [
     , ("M-S-m", sendMessage RestoreNextMinimizedWin)
 
     -- Brightness Keys
-    , ("<XF86MonBrightnessUp>", spawn "xbacklight + 5 -time 100 -steps 1")
-    , ("<XF86MonBrightnessDown>", spawn "xbacklight - 5 -time 100 -steps 1")
+    , ("<XF86MonBrightnessUp>", spawn "light -A 5")
+    , ("<XF86MonBrightnessDown>", spawn "light -U 5")
 
     -- Volume setting media keys
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
