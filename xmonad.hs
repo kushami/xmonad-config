@@ -24,7 +24,7 @@ myModMask = mod4Mask
 
 
 -- ワークスペースの設定
-myWorkspaces = ["1:term","2:browser","3:dir","4:mail","5:edit","6:code","7:dict","8:log","9:sys"]
+myWorkspaces = ["1:term","2:browser","3:dir","4:mail","5:code","6:music","7:dict","8:other","9:sys"]
 
 
 -- 境界線の太さ
