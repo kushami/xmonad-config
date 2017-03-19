@@ -39,7 +39,7 @@ myFocusedBorderColor = "#ff0000"
 -- キーバインディング
 myAdditionalKeys = [
     -- スクリーンショット
-    ("M-a", spawn "sleep 0.2; scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png")
+    ("M-a", spawn "sleep 0.2; scrot ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png")
 
     -- ロック&スクリーンセーバ起動
     , ("M-z", spawn "xscreensaver-command -lock")
