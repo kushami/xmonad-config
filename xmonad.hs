@@ -63,6 +63,15 @@ myAdditionalKeys = [
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")]
 
 
+myRemoveKeys = [
+    -- gmrun は使わないので外す
+    "M-S-p"
+    -- reloadするとxmobarが変な挙動をするので廃止する
+    -- これ以降はそこまで頻繁に変更しないはず
+    , "M-q"
+    ]
+
+
 -- レイアウトに関する設定
 myLayoutHook = (smartBorders $ avoidStruts $ maximize $ minimize (tiled ||| Mirror tiled)) ||| (noBorders Full)
     where
@@ -109,4 +118,6 @@ main = do
         , startupHook = myStartupHook
         }
         `additionalKeysP` myAdditionalKeys
+
+        `removeKeysP` myRemoveKeys
 
