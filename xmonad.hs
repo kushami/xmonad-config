@@ -24,7 +24,7 @@ myModMask = mod4Mask
 
 
 -- ワークスペースの設定
-myWorkspaces = ["1:term","2:browser","3:dir","4","5","6","7","8","9","0"]
+myWorkspaces = ["1:term","2:browser","3:dir","4:mail","5:edit","6:code","7:dict","8:log","9:sys"]
 
 
 -- 境界線の太さ
@@ -93,7 +93,7 @@ myStartupHook = setWMName "LG3D"
 
 -- XMonadの実行
 main = do
-    xmproc <- spawnPipe "/usr/bin/xmobar /home/kshun/.xmonad/.xmobarrc"
+    xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/.xmobarrc"
     xmonad $ desktopConfig
         { terminal = myTerminal
         , borderWidth = myBorderWidth
