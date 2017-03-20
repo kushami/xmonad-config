@@ -37,6 +37,15 @@ myFocusedBorderColor = "#ff0000"
 
 
 -- キーバインディング
+myRemoveKeys = [
+    -- gmrun は使わないので外す
+    "M-S-p"
+    -- reloadするとxmobarが変な挙動をするので廃止する
+    -- これ以降はそこまで頻繁に変更しないはず
+    , "M-q"
+    ]
+
+
 myAdditionalKeys = [
     -- スクリーンショット
     ("M-a", spawn "sleep 0.2; scrot ~/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png")
@@ -54,6 +63,10 @@ myAdditionalKeys = [
     , ("M-m", withFocused minimizeWindow)
     , ("M-S-m", sendMessage RestoreNextMinimizedWin)
 
+    -- ウィンドウを閉じる
+    -- defaultでは再読込だけど、Macのキーバインドに合わせる
+    , ("M-q", kill)
+
     -- Brightness Keys
     , ("<XF86MonBrightnessUp>", spawn "light -A 5")
     , ("<XF86MonBrightnessDown>", spawn "light -U 5")
@@ -61,15 +74,6 @@ myAdditionalKeys = [
     -- Volume setting media keys
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")]
-
-
-myRemoveKeys = [
-    -- gmrun は使わないので外す
-    "M-S-p"
-    -- reloadするとxmobarが変な挙動をするので廃止する
-    -- これ以降はそこまで頻繁に変更しないはず
-    , "M-q"
-    ]
 
 
 -- レイアウトに関する設定
@@ -117,7 +121,6 @@ main = do
         , logHook = myLogHook xmproc
         , startupHook = myStartupHook
         }
-        `additionalKeysP` myAdditionalKeys
-
         `removeKeysP` myRemoveKeys
+        `additionalKeysP` myAdditionalKeys
 
