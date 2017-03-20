@@ -72,6 +72,7 @@ myAdditionalKeys = [
     , ("<XF86MonBrightnessDown>", spawn "light -U 5")
 
     -- Volume setting media keys
+    , ("<XF86AudioMute>", spawn "~/bin/mute_toggle.sh")
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")]
 
